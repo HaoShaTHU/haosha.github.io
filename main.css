@@ -1346,7 +1346,7 @@ hr {
   }
   
 #menu div {
-    flex: 1 1 100px; /* Grow to fill available space, but not smaller than 150px */
+    flex: 1 1 50px; /* Grow to fill available space, but not smaller than 150px */
     text-align: center;
     vertical-align: middle;
     color: #000;
