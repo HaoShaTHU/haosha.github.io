@@ -62,7 +62,7 @@
       <div class="bio-text">
             My research interests lie in <b>ML</b> and <b>NLP</b>, with a specific focus on the training and evaluation of LMs.
             <!-- Recently I am studying how to synthesize high-quality data to train models more effectively. -->
-            I am also paying attention to the evaluation and methods of LLM agents.
+            I am also paying attention to the evaluation and methods of computer agents.
             My goal is to make language models truly capable of solving problems in both the physical and digital worlds.<br><br>
             Currently, I am a research intern at Language Technologies Institute</a>, Carnegie Mellon University, advised by <a href="https://www.cs.cmu.edu/~cx/">Prof. Chenyan Xiong</a>. 
             During my exchange at the University of Hong Kong, I am fortunate to work with <a href="https://taoyds.github.io/">Prof. Tao Yu</a>. Previously, I collaborated with <a href="https://xuminghu.github.io/">Prof. Xuming Hu</a> and <a href="https://www.thss.tsinghua.edu.cn/en/faculty/lijiewen.htm">Prof. Lijie Wen</a> at School of Software, Tsinghua University.<br><br>
@@ -111,7 +111,7 @@
       <div class="award-main-text-box">
         <ul style="line-height: 1.5; font-size: 16px;">
           <li> The Fung Scholarship, Fung Foundation, 2024.</li>
-          <li> Comprehensive Excellence Scholarship (Top 1% in both Academics and Research), Tsinghua University, 2022 and 2023.</li>
+          <li> Comprehensive Excellence Scholarship (Top 1% in both Academics and Research), Tsinghua University, 2022 and 2023 and 2024.</li>
           <li> Academic Excellence Scholarship (Top 5%) , Tsinghua University, 2021 </li>
           <li> Outstanding student leader Award (Top 1 one year), Tsinghua University, 2022.</li>
           <li> Natural Science Foundation by Beijing Municipal Science & Technology Commission, 2023</li>
@@ -159,7 +159,7 @@
   <div class="wrapper">
     <hr>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; flex-wrap: nowrap;">
-    <span>Last Updated: Aug 2024</span>
+    <span>Last Updated: Oct 2024</span>
     <span>Get inspired by <a href="https://www.cs.princeton.edu/~danqic/">Prof. Chen's Website</a> and <a href="https://www.hexianghu.com/">Dr. Hu's Website</a></span>
   </div>
   </div>
@@ -245,9 +245,17 @@
   }
 
   addPaper(
+    title="Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+    authors="Xiaochuan Li, Zichun Yu, Chenyan Xiong",
+    conference="preprint",
+    special=null,
+    link="https://arxiv.org/abs/2410.14208",
+    code="https://github.com/cxcscmu/Montessori-Instruct",
+  )
+  addPaper(
     title="OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments", 
     authors="Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Toh Jing Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu, Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, Tao Yu", 
-    conference="preprint", 
+    conference="NIPS 2024 D&B Track", 
     special=null, 
     link="https://arxiv.org/pdf/2404.07972", 
     code="https://os-world.github.io/",
@@ -280,35 +288,71 @@
     code="https://github.com/openBII/BiMap",
   )
 
-  function addProject(title, description, repoLink, stars) {
-    let projectHtml = `
-      <div class="project">
-        <h2 class="project-title"><a style="color: #0969da;" href="${repoLink}">${title}</a></h2>
-        <p class="project-description">${description}</p>
-        <div class="project-info">
-          <a href="${repoLink}" target="_blank" class="project-link">
-            <svg class="octicon octicon-repo mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
-            Repository
-          </a>
-          <span class="project-stat project-star">
-            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star">
-              <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
-            </svg>
-            ${stars}
-          </span>
-        </div>
-      </div>
-    `;
+  let projectCounter = 0; // Initialize a global counter
 
-    document.querySelector('.project-container').innerHTML += projectHtml;
+  function addProject(title, description, repoLink) {
+  projectCounter++; // Increment the counter for each new project
+  let projectId = `project-${projectCounter}`; // Use the counter to generate a unique ID for each project
+
+  let projectHtml = `
+    <div class="project" id="${projectId}">
+      <h2 class="project-title"><a style="color: #0969da;" href="${repoLink}" target="_blank">${title}</a></h2>
+      <p class="project-description">${description}</p>
+      <div class="project-info">
+        <a href="${repoLink}" target="_blank" class="project-link">
+          <svg class="octicon octicon-repo mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+          </svg>
+          Repository
+        </a>
+        <span class="project-stat project-star">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star">
+            <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+          </svg>
+          <span class="star-count">Loading...</span>
+        </span>
+      </div>
+    </div>
+  `;
+
+  document.querySelector('.project-container').innerHTML += projectHtml;
+
+  // Extract owner and repo from the repoLink
+  const repoPathMatch = repoLink.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/]+)/);
+  if (!repoPathMatch) {
+    console.error('Invalid GitHub repository URL:', repoLink);
+    document.querySelector(`#${projectId} .star-count`).textContent = 'N/A';
+    return;
   }
+
+  const owner = repoPathMatch[1];
+  const repo = repoPathMatch[2];
+
+  // Fetch star count from GitHub API
+  fetch(`https://api.github.com/repos/${owner}/${repo}`)
+    .then(response => response.json())
+    .then(data => {
+      const starCount = data.stargazers_count;
+      document.querySelector(`#${projectId} .star-count`).textContent = starCount;
+    })
+    .catch(error => {
+      console.error('Error fetching star count:', error);
+      document.querySelector(`#${projectId} .star-count`).textContent = 'N/A';
+    });
+}
+
 
   addProject(
     "OSWorld",
-    "the first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across various operating systems",
+    "The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation across various operating systems.",
     "https://github.com/xlang-ai/OSWorld",
-    "1.1K+"
   );
+
+  addProject(
+    "Montessori-Instruct",
+    "Montessori is a novel data synthesis framework that: tailors the data generation capabilities of the teacher model to align with the student's learning preferences.",
+    "https://github.com/cxcscmu/Montessori-Instruct",
+  )
 
   // addProject(
   //   "Self-Reward",
