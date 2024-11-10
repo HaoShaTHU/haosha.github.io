@@ -1530,3 +1530,17 @@ hr {
       gap: 8px;
     }
   }
+
+
+
+  .award-title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .award-details {
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 5px;
+  }
