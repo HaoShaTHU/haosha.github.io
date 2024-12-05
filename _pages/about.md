@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am Hao Sha, an undergraduate at Tsinghua University, pursuing a double major in Mechanics and Vehicle Engineering. I have worked with [Prof. Peng Cui](https://pengcui.thumedialab.com/) on generalization and causal deep learning. During my summer research, I was mentored by [Prof. Masayoshi Tomizuka](https://me.berkeley.edu/people/masayoshi-tomizuka/) at UC Berkeley, focusing on control systems and autonomous driving. Previously, I worked under the mentorship of [Prof. Li Yi](https://ericyi.github.io/) at Tsinghua University and collaborated with [Prof. Leonidas Guibas’s Lab](https://geometry.stanford.edu/) at Stanford University, where my research focused on computer vision.
 
 A data-driven personal website
 ======
