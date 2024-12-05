@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Hao Sha, an undergraduate at Tsinghua University, pursuing a double major in Mechanics and Vehicle Engineering. I have worked with [Prof. Peng Cui](https://pengcui.thumedialab.com/) on generalization and causal deep learning. During my summer research, I was mentored by [Prof. Masayoshi Tomizuka](https://me.berkeley.edu/people/masayoshi-tomizuka/) at UC Berkeley, focusing on control systems and autonomous driving. Previously, I worked under the mentorship of [Prof. Li Yi](https://ericyi.github.io/) at Tsinghua University and collaborated with [Prof. Leonidas Guibas’s Lab](https://geometry.stanford.edu/) at Stanford University, where my research focused on computer vision.
+I am Hao Sha, an undergraduate at [Tsinghua University](https://www.tsinghua.edu.cn/en/index.htm), pursuing a double major in Mechanics and Vehicle Engineering. I have worked with [Prof. Peng Cui](https://pengcui.thumedialab.com/) on generalization and causal deep learning. During my summer research, I was mentored by [Prof. Masayoshi Tomizuka](https://me.berkeley.edu/people/masayoshi-tomizuka/) at UC Berkeley, focusing on control systems and autonomous driving. Previously, I worked under the mentorship of [Prof. Li Yi](https://ericyi.github.io/) at Tsinghua University and collaborated with [Prof. Leonidas Guibas’s Lab](https://geometry.stanford.edu/) at Stanford University, where my research focused on computer vision.
 
 A data-driven personal website
 ======
