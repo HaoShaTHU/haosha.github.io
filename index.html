@@ -96,6 +96,15 @@
       </div>
     </div>
 
+    <div id="papers" class="publications">
+      <h1 class="md-heading text-left">
+        Working Papers
+      </h1>
+      <div class="text-left">&nbsp;&nbsp;&nbsp;(* stands for equal contribution)</div>
+      <div class="work-list main-text-box">
+      </div>
+    </div>
+
     <!-- <div id="projects">
       <h1 class="md-heading text-left">
         Projects
@@ -282,6 +291,70 @@
     conference="Under review of",
     special="Science Advance",
     link="https://arxiv.org/abs/2410.14208",
+    code=null,
+  )
+
+  let workCount = 0;
+
+  function addWorking(title, authors, conference, special, link, code) {
+      let listEntry = "<div class=\"pub\">";
+      
+      // use link as arxivLink
+      if (link != null) {
+        listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+      }
+
+      // authors
+      // find "Xiaochuan Li" in authors and bold & underline it
+
+      let authorList = authors.split(", ");
+      let newAuthorList = [];
+      for (let i = 0; i < authorList.length; i++) {
+          if (authorList[i].includes("Hao Sha")) {
+              newAuthorList.push('<span style="font-weight: bold; text-decoration: underline;">' + authorList[i] + '</span>');
+        
+          } else {
+              newAuthorList.push(authorList[i]);
+          }
+      }
+      listEntry += "<div class=\"authors\">" + newAuthorList.join(", ") + "</div>";
+
+
+      // conference
+      if (conference != null) {
+          if (special != null) {
+            listEntry += "<div class=\"publishon\"><i>" + conference + "</i><span class=\"special\"><b> " + special + "</b></span><span class=\"place\"></span></div>";
+          }
+          else {
+            listEntry += "<div class=\"publishon\"><i>" + conference + "</i></div>";
+          }
+      }
+
+      // pdf
+      if (link != null) {
+        listEntry += " <a href=\"" + link + "\"><span class=\"label\">[paper]</span></a>";
+      }
+
+      if (code != null) {
+          listEntry += " <a href=\"" + code + "\"><span class=\"label\">[code]</span></a>";
+      }
+
+
+      listEntry += "<br>";
+
+      listEntry += "<div id=\"div" + paperCount + "\" style=\"font-size:15px; width: 0px; padding: 0px; background: rgb(245, 245, 245);margin-top: -12px;\"></div><br></div></div>";
+
+      document.querySelector('.work-list.main-text-box').innerHTML += listEntry;
+
+      workCount += 1;
+  }
+
+  addWorking(
+    title="Representative Sampling for Covariate Shift Generalization",
+    authors="Hao Sha, Yao Mu, Yuxuan Jiang, Li Chen, Chenfeng Xu, Ping Luo, Shengbo Eben Li, Masayoshi Tomizuka, Wei Zhan, and Mingyu Ding",
+    conference="To be submitted to IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    special="(TPAMI)",
+    link=null,
     code=null,
   )
 
