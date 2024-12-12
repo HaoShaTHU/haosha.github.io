@@ -207,8 +207,9 @@
       let authorList = authors.split(", ");
       let newAuthorList = [];
       for (let i = 0; i < authorList.length; i++) {
-          if (authorList[i].includes("Xiaochuan Li")) {
-              newAuthorList.push("<b><u>" + authorList[i] + "</u></b>");
+          if (authorList[i].includes("Hao Sha")) {
+              newAuthorList.push('<span style="font-weight: bold; text-decoration: underline;">' + authorList[i] + '</span>');
+        
           } else {
               newAuthorList.push(authorList[i]);
           }
@@ -245,8 +246,8 @@
   }
 
   addPaper(
-    title="Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
-    authors="Xiaochuan Li, Zichun Yu, Chenyan Xiong",
+    title="Physical Modeling of Spatial Diffusion and Relocation Dynamics of Armed Conflict Prediction",
+    authors="Hao Sha, Jingtian Hu, Pengfei Tian, Yue He, Chong Chen, Fan Yang, Peng Cui",
     conference="preprint",
     special=null,
     link="https://arxiv.org/abs/2410.14208",
