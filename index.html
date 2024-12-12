@@ -87,6 +87,15 @@
       </div>
     </div>
 
+    <div id="papers" class="publications">
+      <h1 class="md-heading text-left">
+        In-Submissions
+      </h1>
+      <div class="text-left">&nbsp;&nbsp;&nbsp;(* stands for equal contribution)</div>
+      <div class="sub-list main-text-box">
+      </div>
+    </div>
+
     <!-- <div id="projects">
       <h1 class="md-heading text-left">
         Projects
@@ -253,114 +262,67 @@
     link="https://arxiv.org/abs/2410.14208",
     code="https://github.com/cxcscmu/Montessori-Instruct",
   )
-  addPaper(
-    title="OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments", 
-    authors="Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Toh Jing Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu, Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, Tao Yu", 
-    conference="NIPS 2024 D&B Track", 
-    special=null, 
-    link="https://arxiv.org/pdf/2404.07972", 
-    code="https://os-world.github.io/",
-  )
 
-  addPaper(
-    title="Evaluating Robustness of Generative Search Engine on Adversarial Factoid Questions",
-    authors="Xuming Hu*, Xiaochuan Li*, Junzhe Chen, Yinghui Li, Yangning Li, Xiaoguang Li, Yasheng Wang, Qun Liu, Lijie Wen, Philip S. Yu, Zhijiang Guo",
-    conference="ACL 2024 Findings",
-    special=null,
-    link="https://arxiv.org/pdf/2403.12077",
-    code="https://github.com/HKUSTGZ-NLP/Adversarial-Attack",
-  )
+  let submissionCount = 0;
 
-  addPaper(
-    title="Towards Understanding Factual Knowledge of Large Language Models",
-    authors="Xuming Hu*, Junzhe Chen*, Xiaochuan Li*, Yufei Guo, Lijie Wen, Philip S. Yu, Zhijiang Guo",
-    conference="ICLR 2024",
-    special="Spotlight",
-    link="https://openreview.net/pdf?id=9OevMUdods",
-    code="https://github.com/THU-BPM/Pinocchio",
-  )
+  function addSubmission(title, authors, conference, special, link, code) {
+      let listEntry = "<div class=\"pub\">";
+      
+      // use link as arxivLink
+      listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
 
-  addPaper(
-    title="SongC: A Compiler for Hybrid Near-Memory and In-Memory Many-Core Architecture",
-    authors="Junfeng Lin*, Huanyu Qu*, Songchen Ma*, Xinglong Ji, Hongyi Li, Xiaochuan Li, Chenhang Song, Weihao Zhang",
-    conference="IEEE Transactions on Computers",
-    special=null,
-    link="https://ieeexplore.ieee.org/abstract/document/10242088",
-    code="https://github.com/openBII/BiMap",
-  )
+      // authors
+      // find "Xiaochuan Li" in authors and bold & underline it
 
-  let projectCounter = 0; // Initialize a global counter
+      let authorList = authors.split(", ");
+      let newAuthorList = [];
+      for (let i = 0; i < authorList.length; i++) {
+          if (authorList[i].includes("Hao Sha")) {
+              newAuthorList.push('<span style="font-weight: bold; text-decoration: underline;">' + authorList[i] + '</span>');
+        
+          } else {
+              newAuthorList.push(authorList[i]);
+          }
+      }
+      listEntry += "<div class=\"authors\">" + newAuthorList.join(", ") + "</div>";
 
-  function addProject(title, description, repoLink) {
-  projectCounter++; // Increment the counter for each new project
-  let projectId = `project-${projectCounter}`; // Use the counter to generate a unique ID for each project
 
-  let projectHtml = `
-    <div class="project" id="${projectId}">
-      <h2 class="project-title"><a style="color: #0969da;" href="${repoLink}" target="_blank">${title}</a></h2>
-      <p class="project-description">${description}</p>
-      <div class="project-info">
-        <a href="${repoLink}" target="_blank" class="project-link">
-          <svg class="octicon octicon-repo mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
-          </svg>
-          Repository
-        </a>
-        <span class="project-stat project-star">
-          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star">
-            <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
-          </svg>
-          <span class="star-count">Loading...</span>
-        </span>
-      </div>
-    </div>
-  `;
+      // conference
+      if (conference != null) {
+          if (special != null) {
+            listEntry += "<div class=\"publishon\"><i>" + conference + "</i><span class=\"special\"><b> " + special + "</b></span><span class=\"place\"></span></div>";
+          }
+          else {
+            listEntry += "<div class=\"publishon\"><i>" + conference + "</i></div>";
+          }
+      }
 
-  document.querySelector('.project-container').innerHTML += projectHtml;
+      // pdf
+      listEntry += " <a href=\"" + link + "\"><span class=\"label\">[paper]</span></a>";
 
-  // Extract owner and repo from the repoLink
-  const repoPathMatch = repoLink.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/]+)/);
-  if (!repoPathMatch) {
-    console.error('Invalid GitHub repository URL:', repoLink);
-    document.querySelector(`#${projectId} .star-count`).textContent = 'N/A';
-    return;
+
+      if (code != null) {
+          listEntry += " <a href=\"" + code + "\"><span class=\"label\">[code]</span></a>";
+      }
+
+
+      listEntry += "<br>";
+
+      listEntry += "<div id=\"div" + paperCount + "\" style=\"font-size:15px; width: 0px; padding: 0px; background: rgb(245, 245, 245);margin-top: -12px;\"></div><br></div></div>";
+
+      document.querySelector('.sub-list.main-text-box').innerHTML += listEntry;
+
+      submissionCount += 1;
   }
 
-  const owner = repoPathMatch[1];
-  const repo = repoPathMatch[2];
-
-  // Fetch star count from GitHub API
-  fetch(`https://api.github.com/repos/${owner}/${repo}`)
-    .then(response => response.json())
-    .then(data => {
-      const starCount = data.stargazers_count;
-      document.querySelector(`#${projectId} .star-count`).textContent = starCount;
-    })
-    .catch(error => {
-      console.error('Error fetching star count:', error);
-      document.querySelector(`#${projectId} .star-count`).textContent = 'N/A';
-    });
-}
-
-
-  addProject(
-    "OSWorld",
-    "The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation across various operating systems.",
-    "https://github.com/xlang-ai/OSWorld",
-  );
-
-  addProject(
-    "Montessori-Instruct",
-    "Montessori is a novel data synthesis framework that: tailors the data generation capabilities of the teacher model to align with the student's learning preferences.",
-    "https://github.com/cxcscmu/Montessori-Instruct",
+  addSubmission(
+    title="LanguageMPC: Large Language Models as Decision Makers for Autonomous Driving",
+    authors="Hao Sha, Yao Mu, Yuxuan Jiang, Li Chen, Chenfeng Xu, Ping Luo, Shengbo Eben Li, Masayoshi Tomizuka, Wei Zhan, and Mingyu Ding",
+    conference="preprint",
+    special=null,
+    link="https://arxiv.org/abs/2410.14208",
+    code="https://github.com/cxcscmu/Montessori-Instruct",
   )
-
-  // addProject(
-  //   "Self-Reward",
-  //   "[Under Construction] <b>My own implementation</b> of the paper <a href='https://arxiv.org/abs/2401.10020'>Self-Rewarding Language Models</a> which is not open-sourced.",
-  //   "",
-  //   "5"
-  // );
 
 </script>
 
