@@ -297,13 +297,15 @@
   function addWorking(title, authors, conference, special, link, code) {
       let listEntry = "<div class=\"pub\">";
       
-      // use link as arxivLink
-      listEntry += "<div class=\"pub-content\"><div class=\"title\"><b>" + title + "</b></div></div>";
+      listEntry += "<div class=\"pub-content\"><div class=\"title\"><b>" + title + "</b></div>";
 
-      // pdf
+      // pdf link (if available)
       if (link != null) {
-        listEntry += " <a href=\"" + link + "\"><span class=\"label\">[paper]</span></a>";
+        listEntry += "<span class=\"link-container\"><a href=\"" + link + "\"><span class=\"label\">[link]</span></a></span>";
       }
+      
+      listEntry += "</div>";
+
 
       // authors
 
