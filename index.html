@@ -302,6 +302,8 @@
       // use link as arxivLink
       if (link != null) {
         listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+      } else {
+        listEntry += "<div class=\"pub-content\"><div class=\"title\"><a>" + title + "</a></div>"
       }
 
       // authors
