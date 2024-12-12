@@ -298,10 +298,11 @@
       let listEntry = "<div class=\"pub\">";
       
       // use link as arxivLink
+      listEntry += "<div class=\"pub-content\"><div class=\"title\">" + <b>title</b> + "</div>"
+
+      // pdf
       if (link != null) {
-        listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
-      } else {
-        listEntry += "<div class=\"pub-content\"><div class=\"title\">" + <b>title</b> + "</div>"
+        listEntry += " <a href=\"" + link + "\"><span class=\"label\">[paper]</span></a>";
       }
 
       // authors
@@ -327,11 +328,6 @@
           else {
             listEntry += "<div class=\"publishon\"><i>" + conference + "</i></div>";
           }
-      }
-
-      // pdf
-      if (link != null) {
-        listEntry += " <a href=\"" + link + "\"><span class=\"label\">[paper]</span></a>";
       }
 
       if (code != null) {
