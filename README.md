@@ -1,3 +1,1 @@
-Xiaochuan's Personal Website
-
-xiaochuanli.com
+HaoSha's Personal Website
