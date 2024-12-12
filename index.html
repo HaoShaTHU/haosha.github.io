@@ -157,11 +157,10 @@
   function addPaper(title, authors, conference, special, link, code) {
       let listEntry = "<div class=\"pub\">";
       
-      // use link
-      listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+      // title
+      listEntry += "<div class=\"pub-content\"><div class=\"title\">" + title + <a href=\"" + link + "\"><span class=\"label\">[link]</span></a> + "</div>";
 
       // authors
-      // find "Xiaochuan Li" in authors and bold & underline it
 
       let authorList = authors.split(", ");
       let newAuthorList = [];
@@ -218,10 +217,7 @@
   function addSubmission(title, authors, conference, special, link, code) {
       let listEntry = "<div class=\"pub\">";
       
-      // use link as arxivLink
-      // listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
-
-      listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+      listEntry += "<div class=\"pub-content\"><div class=\"title\">" + title + "</div>";
       
 
       // authors
