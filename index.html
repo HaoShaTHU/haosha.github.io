@@ -219,7 +219,16 @@
       let listEntry = "<div class=\"pub\">";
       
       // use link as arxivLink
-      listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+      // listEntry += "<div class=\"pub-content\"><div class=\"title\"><a href=\"" + link + "\">" + title + "</a></div>";
+
+      listEntry += "<div class=\"pub-content\"><div class=\"title\">" + title + "</div>";
+
+      // pdf link (if available)
+      if (link != null) {
+        listEntry += "<span class=\"link-container\"><a href=\"" + link + "\"><span class=\"label\">[link]</span></a></span>";
+      }
+      
+      listEntry += "</div>";
 
       // authors
       // find "Xiaochuan Li" in authors and bold & underline it
